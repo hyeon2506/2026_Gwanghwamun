@@ -2362,3 +2362,310 @@ function renderSectionalSeatMap() {
 }
 
 function updateAllSeats() {
+  document.querySelectorAll('.seat').forEach(seat => {
+    seat.classList.remove('count-1', 'count-2', 'count-3', 'count-4', 'count-5');
+  });
+
+  const seatCounts = {};
+  const inputs = document.querySelectorAll('.seat-input');
+
+  inputs.forEach(input => {
+    const val = input.value.trim();
+    if (!val) return;
+
+    let floor = '1F';
+    if (val.includes('2층') || val.toUpperCase().includes('2F')) {
+      floor = '2F';
+    }
+
+    let block = '';
+    const cleanedForBlock = val.replace(/1F|2F|1층|2층/gi, '');
+    if (cleanedForBlock.includes('A') || cleanedForBlock.includes('a') || cleanedForBlock.includes('가')) block = 'A';
+    else if (cleanedForBlock.includes('B') || cleanedForBlock.includes('b') || cleanedForBlock.includes('나')) block = 'B';
+    else if (cleanedForBlock.includes('C') || cleanedForBlock.includes('c') || cleanedForBlock.includes('다')) block = 'C';
+
+    const str = cleanedForBlock.replace(/\s+/g, '');
+    const rowMatch = str.match(/(\d+열)/);
+    const numMatch = str.match(/(\d+)(?!.*열)/);
+
+    if (rowMatch && numMatch) {
+      const row = rowMatch[0];
+      const num = numMatch[0];
+      
+      const key = block ? `${floor}-${block}-${row}-${num}` : `${floor}-${row}-${num}`;
+      seatCounts[key] = (seatCounts[key] || 0) + 1;
+    }
+  });
+
+  document.querySelectorAll('.seat').forEach(seat => {
+    const keyWithBlock = `${seat.dataset.floor}-${seat.dataset.block}-${seat.dataset.row}-${seat.dataset.num}`;
+    const keyWithoutBlock = `${seat.dataset.floor}-${seat.dataset.row}-${seat.dataset.num}`;
+    
+    const count = seatCounts[keyWithBlock] || seatCounts[keyWithoutBlock];
+    if (count) {
+      if (count === 1) seat.classList.add('count-1');
+      else if (count === 2) seat.classList.add('count-2');
+      else if (count === 3) seat.classList.add('count-3');
+      else if (count === 4) seat.classList.add('count-4');
+      else if (count >= 5) seat.classList.add('count-5');
+    }
+  });
+}
+
+function toggleActorFilter(btn) {
+  btn.classList.toggle('active');
+  const btnAll = document.getElementById('btnAll');
+  if (btnAll) btnAll.classList.remove('active');
+  applyFilters();
+}
+
+function applyFilters() {
+  const activeChips = document.querySelectorAll('.actor-chip.active');
+  const rows = document.querySelectorAll('.row');
+
+  const selectedFilters = {};
+  activeChips.forEach(chip => {
+    const role = chip.getAttribute('data-role');
+    const actor = chip.getAttribute('data-actor');
+    if (!selectedFilters[role]) selectedFilters[role] = [];
+    selectedFilters[role].push(actor);
+  });
+
+  let visibleCount = 0;
+
+  rows.forEach(row => {
+    let matchesAllRoles = true;
+
+    for (const [role, actors] of Object.entries(selectedFilters)) {
+      const rowActor = row.getAttribute(`data-${role}`);
+      if (!actors.includes(rowActor)) {
+        matchesAllRoles = false;
+        break;
+      }
+    }
+
+    if (matchesAllRoles) {
+      row.classList.remove('hidden');
+      visibleCount++;
+    } else {
+      row.classList.add('hidden');
+    }
+  });
+
+  const activeActorsList = Array.from(activeChips).map(c => c.getAttribute('data-actor'));
+  const countInfo = document.getElementById('countInfo');
+  const selectedCount = document.getElementById('selected-count');
+
+  if (activeChips.length === 0) {
+    resetFilter();
+  } else {
+    if (countInfo) countInfo.innerText = `선택 배우 [${activeActorsList.join(', ')}] 출연 회차 (${visibleCount}회)`;
+    if (selectedCount) selectedCount.innerText = `${visibleCount}건`;
+  }
+}
+
+function resetFilter() {
+  document.querySelectorAll('.actor-chip').forEach(c => c.classList.remove('active'));
+  const btnAll = document.getElementById('btnAll');
+  if (btnAll) btnAll.classList.add('active');
+
+  const rows = document.querySelectorAll('.row');
+  rows.forEach(r => r.classList.remove('hidden'));
+
+  const countInfo = document.getElementById('countInfo');
+  const selectedCount = document.getElementById('selected-count');
+  if (countInfo) countInfo.innerText = '전체 공연 스케줄';
+  if (selectedCount) selectedCount.innerText = `전체`;
+}
+
+function copyRow(btn) {
+  const row = btn.closest('.row');
+  const date = row.querySelector('.date') ? row.querySelector('.date').innerText.replace(/\n/g, ' ').replace(/\//g, '').trim() : '';
+  const day = row.querySelector('.day') ? row.querySelector('.day').innerText.replace(/\n/g, ' ').trim() : '';
+  const time = row.querySelector('.time') ? row.querySelector('.time').innerText : '';
+  const seatInput = row.querySelector('.seat-input');
+  const seat = seatInput ? seatInput.value : '';
+
+  const roles = ['명우', '월하', '수아', '시영', '과거명우', '과거수아', '중곤'];
+  const roleLabels = { '과거명우': '과거 명우', '과거수아': '과거 수아' };
+  
+  const castLines = roles
+    .map(r => `· ${roleLabels[r] || r}: ${row.getAttribute(`data-${r}`) || '-'}`)
+    .join('\n');
+
+  let text = `[뮤지컬 광화문연가] ${date}(${day}) ${time}\n${castLines}`;
+  if (seat) text += `\n· 내 좌석: ${seat}`;
+
+  navigator.clipboard.writeText(text).then(() => {
+    alert('해당 회차 정보가 복사되었습니다!\n\n' + text);
+  });
+}
+
+function updateCastingCounts() {
+  const allRows = document.querySelectorAll('.row');
+  const totalSchedules = allRows.length;
+
+  const actorTotalMap = {};
+  const actorWatchedMap = {};
+  let totalWatchedCount = 0;
+
+  allRows.forEach(row => {
+    const seatInput = row.querySelector('.seat-input');
+    const isWatched = seatInput && seatInput.value.trim() !== '';
+
+    if (isWatched) {
+      totalWatchedCount++;
+    }
+
+    ['명우', '월하', '수아', '시영', '과거명우', '과거수아', '중곤'].forEach(role => {
+      const actorName = row.getAttribute(`data-${role}`);
+      if (actorName) {
+        actorTotalMap[actorName] = (actorTotalMap[actorName] || 0) + 1;
+        if (isWatched) {
+          actorWatchedMap[actorName] = (actorWatchedMap[actorName] || 0) + 1;
+        }
+      }
+    });
+  });
+
+  const actorList = [
+    { name: '손준호', cntId: 'cnt-명우-1', lblId: 'lbl-명우-1' },
+    { name: '이석훈', cntId: 'cnt-명우-2', lblId: 'lbl-명우-2' },
+    { name: '에녹', cntId: 'cnt-월하-1', lblId: 'lbl-월하-1' },
+    { name: '차지연', cntId: 'cnt-월하-2', lblId: 'lbl-월하-2' },
+    { name: '서은광', cntId: 'cnt-월하-3', lblId: 'lbl-월하-3' },
+    { name: '류승주', cntId: 'cnt-수아-1', lblId: 'lbl-수아-1' },
+    { name: '선예', cntId: 'cnt-수아-2', lblId: 'lbl-수아-2' },
+    { name: '문진아', cntId: 'cnt-시영-1', lblId: 'lbl-시영-1' },
+    { name: '박세미', cntId: 'cnt-시영-2', lblId: 'lbl-시영-2' },
+    { name: '기세중', cntId: 'cnt-과거명우-1', lblId: 'lbl-과거명우-1' },
+    { name: '박희준', cntId: 'cnt-과거명우-2', lblId: 'lbl-과거명우-2' },
+    { name: '김서연', cntId: 'cnt-과거수아-1', lblId: 'lbl-과거수아-1' },
+    { name: '이은정', cntId: 'cnt-과거수아-2', lblId: 'lbl-과거수아-2' },
+    { name: '김민수', cntId: 'cnt-중곤-1', lblId: 'lbl-중곤-1' },
+    { name: '한상호', cntId: 'cnt-중곤-2', lblId: 'lbl-중곤-2' },
+  ];
+
+  actorList.forEach(item => {
+    const watched = actorWatchedMap[item.name] || 0;
+    const total = actorTotalMap[item.name] || 0;
+
+    const cntEl = document.getElementById(item.cntId);
+    const lblEl = document.getElementById(item.lblId);
+
+    if (cntEl) cntEl.innerText = watched;
+    if (lblEl) lblEl.innerText = `/ ${total}회`;
+  });
+
+  const totalCntEl = document.getElementById('cnt-total');
+  const totalLblEl = document.getElementById('lbl-total-all');
+
+  if (totalCntEl) totalCntEl.innerText = totalWatchedCount;
+  if (totalLblEl) totalLblEl.innerText = `/ ${totalSchedules}회`;
+}
+
+function autoSaveData() {
+  const inputs = document.querySelectorAll('.seat-input');
+  const inputValues = Array.from(inputs).map(input => input.value);
+  localStorage.setItem('gwanghwamun_seat_backup_v2', JSON.stringify(inputValues));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderSectionalSeatMap();
+
+  const inputs = document.querySelectorAll('.seat-input');
+  const savedString = localStorage.getItem('gwanghwamun_seat_backup_v2');
+  if (savedString) {
+    try {
+      const inputValues = JSON.parse(savedString);
+      if (Array.isArray(inputValues)) {
+        inputs.forEach((input, index) => {
+          if (typeof inputValues[index] === 'string') {
+            input.value = inputValues[index];
+          }
+        });
+      }
+    } catch (e) {
+      console.error('자동 저장 데이터 복원 실패:', e);
+    }
+  }
+
+  updateAllSeats();
+  updateCastingCounts();
+
+  inputs.forEach(input => {
+    input.addEventListener('input', () => {
+      autoSaveData();
+      updateAllSeats();
+      updateCastingCounts();
+    });
+  });
+
+  const btnExport = document.getElementById('btn-export');
+  if (btnExport) {
+    btnExport.addEventListener('click', () => {
+      autoSaveData();
+      const jsonString = localStorage.getItem('gwanghwamun_seat_backup_v2');
+      
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(jsonString);
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", "gwanghwamun_seat_backup.json");
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+
+      alert('좌석 정보가 파일로 다운로드되었습니다.');
+    });
+  }
+
+  const btnImport = document.getElementById('btn-import');
+  if (btnImport) {
+    btnImport.addEventListener('click', () => {
+      const fileInput = document.createElement('input');
+      fileInput.type = 'file';
+      fileInput.accept = '.json';
+
+      fileInput.onchange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          try {
+            const fileData = JSON.parse(event.target.result);
+            inputs.forEach(input => input.value = '');
+
+            if (Array.isArray(fileData) && typeof fileData[0] === 'object' && fileData[0] !== null) {
+              fileData.forEach(item => {
+                if (item.index !== undefined && inputs[item.index] !== undefined) {
+                  inputs[item.index].value = item.value || '';
+                }
+              });
+            } else if (Array.isArray(fileData)) {
+              inputs.forEach((input, index) => {
+                if (fileData[index] !== undefined) {
+                  input.value = fileData[index];
+                }
+              });
+            }
+
+            autoSaveData();
+            updateAllSeats();
+            updateCastingCounts();
+            alert('백업 파일에서 데이터를 성공적으로 불러왔습니다.');
+          } catch (err) {
+            console.error(err);
+            alert('올바르지 않은 백업 파일 형식입니다.');
+          }
+        };
+        reader.readAsText(file);
+      };
+
+      fileInput.click();
+    });
+  }
+});
+</script>
+</body>
+</html>
