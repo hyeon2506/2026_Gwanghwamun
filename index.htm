@@ -5,43 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2026 뮤지컬 광화문연가 정산판</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Cormorant+Garamond:ital,wght@1,700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Noto+Sans+KR:wght@800&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
 :root {
-  /* 밝고 청명한 가을 하늘 & 화사한 핑크 테마 */
-  --bg-dark: #1a365d;              /* 선명하고 맑은 가을 하늘 딥 블루 Base */
-  --bg-card: rgba(255, 255, 255, 0.12); /* 화사함을 살려주는 반투명 글래스 카드 */
-  --bg-card-sub: rgba(255, 255, 255, 0.08);
+  /* 차분한 노을 하늘 테마 */
+  --bg-dark: #23192d;              /* 해 질 녘 깊은 보랏빛 밤하늘 */
+  --bg-card: rgba(45, 33, 56, 0.72); /* 차분한 반투명 카드 배경 */
+  --bg-card-sub: rgba(255, 255, 255, 0.04);
 
-  --aurora-blue: #3182ce;          /* 화창하고 선명한 코발트 블루 */
-  --aurora-cyan: #63b3ed;          /* 맑은 가을 스카이 블루 */
-  --aurora-pink: #ff7ebd;          /* 깨끗하고 화사한 퓨어 핑크 */
-  --aurora-purple: #e880cc;        /* 은은하게 어우러지는 소프트 라벤더 핑크 */
+  --sunset-coral: #e07a5f;         /* 은은한 노을 코랄 오렌지 */
+  --sunset-rose: #d97b84;          /* 차분한 더스티 로즈 핑크 */
+  --sunset-amber: #f2cc8f;         /* 따뜻한 황혼빛 골드 베이지 */
+  --sunset-plum: #8d6b94;          /* 잔잔한 저녁 보라 */
 
-  --text-main: #ffffff;            /* 또렷한 메인 텍스트 */
-  --text-muted: #cbd5e0;          /* 부드러운 스카이 보조 텍스트 */
+  --text-main: #f8f4f0;            /* 눈이 편안한 아이보리 화이트 */
+  --text-muted: #c4b7c7;           /* 차분한 라벤더 그레이 보조 텍스트 */
 
-  --border-aurora: rgba(99, 179, 237, 0.4);
-  --border-pink: rgba(255, 126, 189, 0.45);
+  --border-sunset: rgba(242, 204, 143, 0.25);
+  --border-rose: rgba(217, 123, 132, 0.35);
 
-  --sat-blue: #63b3ed;            /* 토요일 */
-  --sun-red: #ff66a1;             /* 일요일 */
+  --sat-blue: #9bb1ff;             /* 토요일 */
+  --sun-red: #f28482;              /* 일요일 */
 
   /* 좌석 색상 */
-  --seat-bg: rgba(255, 255, 255, 0.15);
-  --seat-border: rgba(255, 255, 255, 0.25);
-  --seat-wheelchair: #ff7ebd;
+  --seat-bg: rgba(255, 255, 255, 0.1);
+  --seat-border: rgba(242, 204, 143, 0.22);
+  --seat-wheelchair: #d97b84;
 }
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
   background-color: var(--bg-dark);
   background-image: 
-    radial-gradient(circle at 18% 20%, rgba(255, 126, 189, 0.35) 0%, transparent 45%), /* 화사한 핑크 포인트 */
-    radial-gradient(circle at 82% 25%, rgba(99, 179, 237, 0.4) 0%, transparent 55%),  /* 화창한 스카이 블루 빛 */
-    radial-gradient(circle at 50% 85%, rgba(232, 128, 204, 0.22) 0%, transparent 60%); /* 부드러운 라벤더 핑크 틴트 */
+    linear-gradient(180deg, #1d182b 0%, #382438 45%, #5c3744 80%, #7d4e57 100%);
   background-attachment: fixed;
   color: var(--text-main);
   min-height: 100vh;
@@ -50,49 +48,47 @@ body {
 
 /* 히어로 헤더 */
 .hero{
-  background: linear-gradient(180deg, rgba(13, 21, 39, 0.4) 0%, rgba(13, 21, 39, 0.9) 100%);
-  border-bottom: 1px solid var(--border-aurora);
+  background: linear-gradient(180deg, rgba(24, 18, 34, 0.65) 0%, rgba(35, 25, 45, 0.85) 100%);
+  border-bottom: 1px solid var(--border-sunset);
   backdrop-filter: blur(12px);
-  padding: 45px 16px 30px;
+  padding: 42px 16px 28px;
   position: relative;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
-.hero-inner{max-width:980px;margin:0 auto;text-align:center;}
+.hero-inner{max-width:1060px;margin:0 auto;text-align:center;}
 .hero-eyebrow {
   font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
-  letter-spacing: 6px;                  /* 자간을 넓혀 깔끔한 레이아웃 연출 */
-  color: var(--aurora-cyan);
+  letter-spacing: 6px;
+  color: var(--sunset-amber);
   text-transform: uppercase;
   margin-bottom: 8px;
-  text-shadow: 0 0 10px rgba(116, 240, 237, 0.4);
 }
 .hero-title {
   font-family: 'Noto Sans KR', 'Montserrat', sans-serif;
-  font-size: clamp(36px, 7vw, 56px);
-  font-weight: 900;                      /* 두툼하고 선명한 고딕 */
-  letter-spacing: -1px;                  /* 한글 타이틀 밀도감 형성 */
-  background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 40%, var(--aurora-pink) 75%, var(--aurora-cyan) 100%);
+  font-size: clamp(34px, 6.5vw, 52px);
+  font-weight: 900;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #fff8f0 0%, #f2cc8f 48%, #e07a5f 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.2;
-  filter: drop-shadow(0 4px 15px rgba(255, 142, 180, 0.25));
 }
 .hero-sub{
   font-size: 13px;
   color: var(--text-muted);
-  margin-top: 16px;
+  margin-top: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
 }
 
 /* 툴바 */
 .toolbar {
-  max-width:980px;
+  max-width:1060px;
   margin:24px auto 0;
   padding:0 16px;
   display: flex;
@@ -102,67 +98,68 @@ body {
   gap: 12px;
 }
 .result-count { font-size: 13px; color: var(--text-muted); }
-.result-count strong { color: var(--aurora-cyan); font-weight: 700; }
+.result-count strong { color: var(--sunset-amber); font-weight: 700; }
 .btn-group { display: flex; gap: 8px; }
 .btn {
   padding: 8px 18px;
   font-size: 12px;
   font-weight: 700;
   border-radius: 20px;
-  border: 1px solid var(--border-aurora);
-  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-sunset);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(8px);
   color: var(--text-main);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 .btn:hover {
-  background: var(--aurora-blue);
+  background: var(--sunset-coral);
   color: #ffffff;
-  border-color: var(--aurora-cyan);
-  box-shadow: 0 0 15px rgba(42, 186, 194, 0.5);
+  border-color: var(--sunset-amber);
 }
 
 /* 캐스트 필터 */
 .legend-section {
-  max-width: 980px;
-  margin: 0 auto;             /* 기존 상하 margin을 0으로 수정 */
+  max-width: 1060px;
+  margin: 0 auto;
   background: var(--bg-card);
   backdrop-filter: blur(12px);
-  padding: 22px;
-  border: 1px solid var(--border-aurora);
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border: 1px solid var(--border-sunset);
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
 }
 .legend-title {
-  font-family: 'Noto Sans KR', 'Montserrat', sans-serif;
-  font-size: 16px;
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+  font-size: 15px;
   font-weight: 800;
-  letter-spacing: 2px;
-  color: var(--aurora-pink);
-  margin-top: 40px;
-  margin-bottom: 18px;
+  letter-spacing: 2.5px;
+  color: var(--sunset-amber);
+  margin-top: 38px;
+  margin-bottom: 16px;
   text-align: center;
-  text-shadow: 0 0 10px rgba(255, 142, 180, 0.4);
 }
-/* A 한줄, B 한줄로 배치하기 위한 1열 Grid 구성 */
+/* 깔끔한 카드형 다열 그리드 구성 */
 .legend-grid{
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 12px;
 }
 
 .legend-group {
   background: var(--bg-card-sub);
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .legend-role {
   font-size: 12px;
   font-weight: 700;
-  color: var(--aurora-cyan);
-  margin-bottom: 8px;
+  color: var(--sunset-amber);
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -172,183 +169,180 @@ body {
   display: inline-block;
   width: 4px;
   height: 12px;
-  background-color: var(--aurora-pink);
+  background-color: var(--sunset-coral);
   border-radius: 2px;
-  box-shadow: 0 0 6px var(--aurora-pink);
 }
-.legend-actors { display: flex; gap: 6px; flex-wrap: wrap; }
+.legend-actors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 6px;
+}
 .actor-chip{
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
-  padding: 6px 10px;
-  border-radius: 6px;
+  padding: 7px 6px;
+  border-radius: 7px;
   cursor: pointer;
   border: 1px solid rgba(255,255,255,0.1);
-  transition: all .25s ease;
-  background: rgba(0, 0, 0, 0.2);
+  transition: all .2s ease;
+  background: rgba(20, 14, 28, 0.35);
   color: var(--text-main);
-  flex: 1;
   text-align: center;
+  white-space: nowrap;
 }
 .actor-chip:hover{
-  border-color: var(--aurora-pink);
-  color: var(--aurora-pink);
+  border-color: var(--sunset-rose);
+  color: var(--sunset-amber);
 }
 .actor-chip.active{
-  background: linear-gradient(135deg, var(--aurora-blue) 0%, var(--aurora-purple) 100%) !important;
+  background: linear-gradient(135deg, var(--sunset-coral) 0%, var(--sunset-rose) 100%) !important;
   color: #ffffff !important;
-  border-color: var(--aurora-cyan) !important;
+  border-color: var(--sunset-amber) !important;
   font-weight: 700;
-  box-shadow: 0 0 12px rgba(116, 240, 237, 0.4);
+  box-shadow: 0 2px 10px rgba(224, 122, 95, 0.35);
 }
 
-.filter-row-top { max-width: 980px; margin: 12px auto 0; padding: 0 16px; display: flex; justify-content: flex-end; }
+.filter-row-top { max-width: 1060px; margin: 12px auto 0; padding: 0 16px; display: flex; justify-content: flex-end; }
 .btn-all {
   padding: 6px 16px;
   font-size: 12px;
   font-weight: 700;
-  border: 1px solid var(--border-aurora);
+  border: 1px solid var(--border-sunset);
   background: var(--bg-card);
   color: var(--text-muted);
   border-radius: 20px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.25s;
 }
 .btn-all.active {
-  background: var(--aurora-pink);
+  background: var(--sunset-coral);
   color: #ffffff;
-  border-color: var(--aurora-pink);
-  box-shadow: 0 0 10px rgba(255, 142, 180, 0.4);
+  border-color: var(--sunset-amber);
 }
 
-.count-info{text-align:center;font-size:13px;font-weight:700;color:var(--aurora-cyan);margin:24px 0 14px;letter-spacing:1px;}
-
-/* 스케줄 테이블 */
+/* 스케줄 테이블: 날짜-요일-시간-명우-월하-수아-시영-과거명우-과거수아-중곤-좌석-복사 12열 한 줄 정렬 */
 .table-wrap{
-  max-width:980px;
+  max-width:1060px;
   margin:0 auto;
   background: var(--bg-card);
   backdrop-filter: blur(12px);
-  border: 1px solid var(--border-aurora);
-  border-radius: 12px;
+  border: 1px solid var(--border-sunset);
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
 }
 .table-scroll{overflow-x:auto;}
 .table-header{
   display:grid;
-  grid-template-columns:52px 32px 48px repeat(2, 1fr) 110px 40px;
-  background: rgba(13, 21, 39, 0.8);
-  padding: 14px 8px;
-  gap: 4px;
+  grid-template-columns: 56px 46px 50px repeat(7, minmax(68px, 1fr)) 110px 42px;
+  background: rgba(24, 17, 34, 0.85);
+  padding: 14px 10px;
+  gap: 5px;
   align-items: center;
-  min-width: 680px;
-  border-bottom: 1px solid var(--border-aurora);
+  min-width: 820px;
+  border-bottom: 1px solid var(--border-sunset);
 }
-.th{font-size:11px;font-weight:700;color:var(--aurora-cyan);text-align:center;letter-spacing:1px;}
+.th{font-size:11.5px;font-weight:700;color:var(--sunset-amber);text-align:center;letter-spacing:0.5px;white-space:nowrap;}
 
 .month-divider {
-  background: rgba(255, 142, 180, 0.1);
-  color: var(--aurora-pink);
+  background: rgba(224, 122, 95, 0.14);
+  color: var(--sunset-amber);
   font-weight: 700;
   font-size: 12px;
-  padding: 10px 16px;
-  border-top: 1px solid var(--border-pink);
-  border-bottom: 1px solid var(--border-pink);
-  letter-spacing: 2px;
-  text-shadow: 0 0 6px rgba(255, 142, 180, 0.3);
+  padding: 9px 16px;
+  border-top: 1px solid var(--border-rose);
+  border-bottom: 1px solid var(--border-rose);
+  letter-spacing: 1.5px;
 }
 
 .row{
   display:grid;
-  grid-template-columns:52px 32px 48px repeat(2, 1fr) 110px 40px;
-  padding: 10px 8px;
-  gap: 4px;
+  grid-template-columns: 56px 46px 50px repeat(7, minmax(68px, 1fr)) 110px 42px;
+  padding: 9px 10px;
+  gap: 5px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   align-items: center;
-  min-width: 680px;
+  min-width: 820px;
   background: transparent;
   transition: background 0.2s;
 }
 .row:nth-child(even){background: var(--bg-card-sub);}
-.row:hover{background: rgba(116, 240, 237, 0.05);}
+.row:hover{background: rgba(242, 204, 143, 0.07);}
 .row.hidden{display:none !important;}
 .cell{font-size:12px;color:var(--text-main);text-align:center;}
 .cell.date{font-weight:700;color:var(--text-main);}
 .day-sat{color:var(--sat-blue);font-weight:700;}
 .day-sun{color:var(--sun-red);font-weight:700;}
 .day-wkd{color:var(--text-muted);}
-.cell.time{font-size:11px;color:var(--text-muted);}
+.cell.time{font-size:11.5px;color:var(--text-muted);}
 
 .actor-badge{
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 500;
-  padding: 5px 0;
+  padding: 5px 4px;
   border-radius: 6px;
   display: block;
   text-align: center;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   color: var(--text-main);
+  white-space: nowrap;
+}
+.actor-badge:empty {
+  background: transparent;
+  border-color: transparent;
+}
+.actor-badge span {
+  color: var(--sunset-amber);
+  font-weight: 700 !important;
 }
 
 .copy-btn{
-  background: rgba(255,255,255,0.05);
-  border: 1px solid var(--border-aurora);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border-sunset);
   border-radius: 6px;
-  color: var(--aurora-cyan);
+  color: var(--sunset-amber);
   cursor: pointer;
   font-size: 12px;
-  padding: 5px;
+  padding: 5px 0;
   width: 100%;
   transition: all 0.2s;
 }
-.copy-btn:hover{background:var(--aurora-blue);color:#ffffff;box-shadow: 0 0 8px var(--aurora-blue);}
+.copy-btn:hover{background:var(--sunset-coral);color:#ffffff;}
 
 .seat-input{
   width:100%;
-  font-size: 11px;
+  font-size: 11.5px;
   padding: 6px;
-  border: 1px solid var(--border-aurora);
+  border: 1px solid var(--border-sunset);
   border-radius: 6px;
-  background: rgba(0, 0, 0, 0.3);
-  color: var(--aurora-cyan);
+  background: rgba(18, 13, 26, 0.45);
+  color: var(--sunset-amber);
   text-align: center;
 }
-.seat-input:focus{outline:none;border-color:var(--aurora-pink);box-shadow: 0 0 8px rgba(255, 142, 180, 0.5);}
+.seat-input:focus{outline:none;border-color:var(--sunset-coral);box-shadow: 0 0 6px rgba(224, 122, 95, 0.4);}
 
 /* 정산 섹션 */
 .settle-wrap {
-  max-width: 980px;
+  max-width: 1060px;
   margin: 40px auto 0;
   padding: 0 16px;
 }
-.settle-title {
-  font-family: 'Cinzel', serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--aurora-pink);
-  margin-bottom: 18px;
-  letter-spacing: 3px;
-  text-align: center;
-  text-shadow: 0 0 10px rgba(255, 142, 180, 0.4);
-}
 
-/* A 한줄, B 한줄로 배치하기 위한 1열 Grid 구성 */
 .role-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
   align-items: stretch;
 }
 
 .role-card {
   background: var(--bg-card);
   backdrop-filter: blur(12px);
-  border: 1px solid var(--border-aurora);
+  border: 1px solid var(--border-sunset);
   border-radius: 12px;
-  padding: 18px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -357,76 +351,72 @@ body {
 .cgl {
   font-size: 13px;
   font-weight: 700;
-  color: var(--aurora-cyan);
-  margin-bottom: 14px;
+  color: var(--sunset-amber);
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
 }
 .cgl::before {
   content: '';
   display: inline-block;
   width: 4px;
   height: 12px;
-  background-color: var(--aurora-pink);
+  background-color: var(--sunset-coral);
   border-radius: 2px;
 }
 
 .counting-box { 
-  display: flex; 
-  justify-content: center;
-  gap: 10px; 
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(68px, 1fr));
+  gap: 8px;
 }
 
 .count-card {
-  flex: 1;
-  min-width: 80px;
-  max-width: 120px;
   background: var(--bg-card-sub);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 8px;
-  padding: 12px 8px;
+  padding: 12px 6px;
   text-align: center;
 }
 
 .cnt-name { font-size: 13px; font-weight: 700; margin-bottom: 4px; color: var(--text-main); }
-.cnt-num { font-size: 22px; font-weight: 900; color: var(--aurora-pink); line-height: 1.1; text-shadow: 0 0 8px rgba(255, 142, 180, 0.4); }
-.cnt-label { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+.cnt-num { font-size: 21px; font-weight: 900; color: var(--sunset-coral); line-height: 1.1; }
+.cnt-label { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
 
 .cnt-total-box { display: flex; justify-content: center; margin-top: 24px; }
 .cnt-total-card {
-  width: 200px;
-  background: linear-gradient(135deg, rgba(42, 186, 194, 0.6) 0%, rgba(155, 112, 212, 0.6) 100%);
+  width: 220px;
+  background: linear-gradient(135deg, rgba(224, 122, 95, 0.35) 0%, rgba(141, 107, 148, 0.4) 100%);
   backdrop-filter: blur(10px);
-  border: 1px solid var(--aurora-cyan);
-  border-radius: 12px;
+  border: 1px solid var(--sunset-amber);
+  border-radius: 14px;
   color: #ffffff;
   padding: 18px 12px;
   text-align: center;
-  box-shadow: 0 0 20px rgba(116, 240, 237, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
-.cnt-total-title { font-family: 'Cinzel', serif; font-size: 12px; font-weight: 700; letter-spacing: 3px; color: var(--aurora-cyan); }
-.cnt-total-num { font-size: 34px; font-weight: 900; line-height: 1; margin: 6px 0; color: #ffffff; text-shadow: 0 0 10px #ffffff; }
-.cnt-total-of { font-size: 14px; font-weight: 700; color: #e0f2fe; }
+.cnt-total-title { font-family: 'Montserrat', serif; font-size: 12px; font-weight: 800; letter-spacing: 3px; color: var(--sunset-amber); }
+.cnt-total-num { font-size: 32px; font-weight: 900; line-height: 1.1; margin: 6px 0 0; color: #ffffff; }
+.cnt-total-of { font-size: 14px; font-weight: 700; color: var(--text-muted); margin-left: 4px; }
 
 /* 좌석 배치도 섹션 */
 .seating-section{
-  max-width:980px;
+  max-width:1060px;
   margin:40px auto 0;
   background: var(--bg-card);
   backdrop-filter: blur(12px);
   padding: 28px 16px;
-  border: 1px solid var(--border-aurora);
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-sunset);
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
 }
 .seating-title{
-  font-family: 'Cinzel', serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--aurora-cyan);
+  font-family: 'Montserrat', serif;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--sunset-amber);
   margin-bottom: 6px;
   text-align: center;
   letter-spacing: 3px;
@@ -439,37 +429,44 @@ body {
 
 .stage-box {
   width: 100%;
-  max-width: 520px; 
-  height: 38px;
-  border: 1px solid var(--border-pink);
-  background: rgba(255, 142, 180, 0.08);
-  color: var(--aurora-pink);
-  font-family: 'Cinzel', sans-serif;
-  font-size: 16px;
-  font-weight: 900;
+  max-width: 780px; 
+  height: 36px;
+  border: 1px solid var(--border-rose);
+  background: rgba(224, 122, 95, 0.12);
+  color: var(--sunset-amber);
+  font-size: 14px;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
-  letter-spacing: 8px;
+  margin: 0 auto 18px;
+  letter-spacing: 10px;
   border-radius: 6px;
-  box-shadow: 0 0 12px rgba(255, 142, 180, 0.2);
+}
+
+.seat-scroll-wrap {
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.seat-inner-wrap {
+  min-width: 780px;
+  max-width: 860px;
+  margin: 0 auto;
 }
 
 .block-headers {
-  display: flex;
-  justify-content: space-between;
-  max-width: 520px; 
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
   margin: 0 auto 12px;
-  gap: 16px;
+  gap: 14px;
 }
 
 .block-header {
-  flex: 1;
   height: 28px;
-  border: 1px solid var(--border-aurora);
-  background: rgba(42, 186, 194, 0.1);
-  color: var(--aurora-cyan);
+  border: 1px solid var(--border-sunset);
+  background: rgba(242, 204, 143, 0.1);
+  color: var(--sunset-amber);
   font-size: 13px;
   font-weight: 700;
   display: flex;
@@ -481,28 +478,28 @@ body {
 .seat-map-wrapper {
   display: flex;
   justify-content: center;
-  gap: 16px;
-  overflow-x: auto;
-  padding-bottom: 10px;
+  align-items: flex-start;
+  gap: 14px;
 }
 
 .seat-block { display: flex; flex-direction: column; gap: 3px; }
-.seat-row { display: flex; align-items: center; gap: 3px; }
+.seat-row { display: flex; align-items: center; gap: 4px; }
 
 .row-label-left, .row-label-right {
   font-size: 10px;
   font-weight: 700;
-  color: var(--aurora-cyan);
-  width: 22px;
+  color: var(--sunset-amber);
+  width: 24px;
   text-align: center;
+  flex-shrink: 0;
 }
 
 .seat-grid { display: flex; gap: 2px; }
 
 .seat {
-  width: 17px;
-  height: 17px;
-  font-size: 9px;
+  width: 16px;
+  height: 16px;
+  font-size: 8.5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -510,31 +507,25 @@ body {
   background: var(--seat-bg);
   border: 1px solid var(--seat-border);
   color: var(--text-main);
-  font-weight: 700;
+  font-weight: 600;
   user-select: none;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .seat.wheelchair {
   background: var(--seat-wheelchair) !important;
-  border-color: var(--aurora-pink) !important;
+  border-color: var(--sunset-rose) !important;
   color: #ffffff !important;
-  box-shadow: 0 0 6px var(--aurora-pink);
 }
 
-.gap { width: 17px; height: 17px; visibility: hidden; }
+.gap { width: 16px; height: 16px; visibility: hidden; }
 
-/* 관람 횟수별 네온 컬러 (Sky-to-Pink) */
-.seat.count-1 { background: #3b82f6 !important; color: #ffffff !important; border-color: #60a5fa !important; } /* 1회: 선명한 스카이 블루 */
-.seat.count-2 { background: #6366f1 !important; color: #ffffff !important; border-color: #818cf8 !important; } /* 2회: 쿨 인디고 Blue-Violet */
-.seat.count-3 { background: #a855f7 !important; color: #ffffff !important; font-weight: 900; border-color: #c084fc !important; box-shadow: 0 0 6px #a855f7; } /* 3회: 은은한 바이올렛 퍼플 */
-.seat.count-4 { background: #ec4899 !important; color: #ffffff !important; font-weight: 900; border-color: #f472b6 !important; box-shadow: 0 0 8px #ec4899; } /* 4회: 마젠타 핑크 */
-.seat.count-5 { background: #ff7ebd !important; color: #1a365d !important; font-weight: 900; border-color: #ffffff !important; box-shadow: 0 0 10px #ff7ebd; } /* 5회 이상: 메인 퓨어 핑크 */
-
-@media(min-width:768px){
-  .seat{width:18px;height:18px;font-size:9.5px;}
-  .gap{width:18px;height:18px;}
-}
+/* 관람 횟수별 차분한 노을 컬러 */
+.seat.count-1 { background: #8d6b94 !important; color: #ffffff !important; border-color: #b592bc !important; }
+.seat.count-2 { background: #c96480 !important; color: #ffffff !important; border-color: #e588a2 !important; }
+.seat.count-3 { background: #e07a5f !important; color: #ffffff !important; font-weight: 900; border-color: #f4a28c !important; }
+.seat.count-4 { background: #e76f51 !important; color: #ffffff !important; font-weight: 900; border-color: #f4a261 !important; }
+.seat.count-5 { background: #f2cc8f !important; color: #23192d !important; font-weight: 900; border-color: #ffffff !important; }
 
 .cell.date, .cell.day {
   display: flex;
@@ -542,13 +533,6 @@ body {
   justify-content: center;
   align-items: center;
   line-height: 1.2;
-}
-
-.sub-text {
-  font-size: 0.75em;
-  font-weight: normal;
-  opacity: 0.8;
-  margin-top: 2px;
 }
 </style>
 </head>
@@ -558,9 +542,9 @@ body {
   <div class="hero">
     <div class="hero-inner">
       <div class="hero-eyebrow">MUSICAL</div>
-      <div class="hero-title"> 2026 광화문연가</div>
+      <div class="hero-title">2026 광화문연가</div>
       <div class="hero-sub">
-        <span>2026.09.06 ~ 2025.11.15</span>
+        <span>2026.09.06 ~ 2026.11.15</span>
         <span>•</span>
         <span>디큐브 링크아트센터</span>
       </div>
@@ -597,35 +581,35 @@ body {
         <button class="actor-chip" data-role="월하" data-actor="서은광" onclick="toggleActorFilter(this)">서은광</button>
       </div>
     </div>
-	    <div class="legend-group">
+    <div class="legend-group">
       <div class="legend-role">수아</div>
       <div class="legend-actors">
-        <button class="actor-chip" data-role="수아" data-actor="류승주" onclick="toggleActorFilter(this)">류승수</button>
+        <button class="actor-chip" data-role="수아" data-actor="류승주" onclick="toggleActorFilter(this)">류승주</button>
         <button class="actor-chip" data-role="수아" data-actor="선예" onclick="toggleActorFilter(this)">선예</button>
       </div>
     </div>
-	    <div class="legend-group">
+    <div class="legend-group">
       <div class="legend-role">시영</div>
       <div class="legend-actors">
         <button class="actor-chip" data-role="시영" data-actor="문진아" onclick="toggleActorFilter(this)">문진아</button>
         <button class="actor-chip" data-role="시영" data-actor="박세미" onclick="toggleActorFilter(this)">박세미</button>
       </div>
     </div>
-	    <div class="legend-group">
-      <div class="legend-role">과거 명우</div>
+    <div class="legend-group">
+      <div class="legend-role">과거명우</div>
       <div class="legend-actors">
-        <button class="actor-chip" data-role="과거 명우" data-actor="기세중" onclick="toggleActorFilter(this)">기세중</button>
-        <button class="actor-chip" data-role="과거 명우" data-actor="박희준" onclick="toggleActorFilter(this)">박희준</button>
+        <button class="actor-chip" data-role="과거명우" data-actor="기세중" onclick="toggleActorFilter(this)">기세중</button>
+        <button class="actor-chip" data-role="과거명우" data-actor="박희준" onclick="toggleActorFilter(this)">박희준</button>
       </div>
     </div>
-	    <div class="legend-group">
-      <div class="legend-role">과거 수아</div>
+    <div class="legend-group">
+      <div class="legend-role">과거수아</div>
       <div class="legend-actors">
-        <button class="actor-chip" data-role="과거 수아" data-actor="김서연" onclick="toggleActorFilter(this)">김서연</button>
-        <button class="actor-chip" data-role="과거 수아" data-actor="이은정" onclick="toggleActorFilter(this)">이은정</button>
+        <button class="actor-chip" data-role="과거수아" data-actor="김서연" onclick="toggleActorFilter(this)">김서연</button>
+        <button class="actor-chip" data-role="과거수아" data-actor="이은정" onclick="toggleActorFilter(this)">이은정</button>
       </div>
     </div>
-	    <div class="legend-group">
+    <div class="legend-group">
       <div class="legend-role">중곤</div>
       <div class="legend-actors">
         <button class="actor-chip" data-role="중곤" data-actor="김민수" onclick="toggleActorFilter(this)">김민수</button>
@@ -641,21 +625,21 @@ body {
   
   <div class="legend-title" id="countInfo">전체 공연 스케줄</div>
   
-<!-- 스케줄 테이블 -->
+  <!-- 스케줄 테이블 -->
   <div class="table-wrap">
     <div class="table-scroll">
       <div class="table-header">
         <div class="th">날짜</div><div class="th">요일</div><div class="th">시간</div>
-        <div class="th">명우</div><div class="th">월하</div><div class="th">수아</div><div class="th">시영</div><div class="th">과거 명우</div><div class="th">과거 수아</div><div class="th">중곤</div>
+        <div class="th">명우</div><div class="th">월하</div><div class="th">수아</div><div class="th">시영</div><div class="th">과거명우</div><div class="th">과거수아</div><div class="th">중곤</div>
         <div class="th">좌석</div><div class="th">복사</div>
       </div>
 
-      <div class="month-divider">2026년 11월</div>
+      <div class="month-divider">2026년 9월</div>
 
 <!-- 9/6 (일) 14:00 -->
-<div class="row" data-명우="손준호" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="김민수">
-  <div class="cell date">9/6<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">일<br><span style="font-size: 0.7em; font-weight: normal;">프리뷰</span></div>
+<div class="row" data-명우="손준호" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거명우="기세중" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">9/6</div>
+  <div class="cell day day-sun">일<br><span style="font-size: 0.7em; font-weight: normal;">오픈위크</span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">손준호<span style="font-size: 0.7em; font-weight: normal;"> 첫공</span></span></div>
   <div class="cell"><span class="actor-badge">서은광<span style="font-size: 0.7em; font-weight: normal;"> 첫공</span></span></div>
@@ -669,41 +653,41 @@ body {
 </div>
 
 <!-- 9/6 (일) 18:30 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">9/6<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">일<br><span style="font-size: 0.7em; font-weight: normal;">프리뷰</span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거명우="기세중" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">9/6</div>
+  <div class="cell day day-sun">일<br><span style="font-size: 0.7em; font-weight: normal;">오픈위크</span></div>
   <div class="cell time">18:30</div>
-  <div class="cell"><span class="actor-badge">이석훈</span></div>
-  <div class="cell"><span class="actor-badge">차지연</span></div>
+  <div class="cell"><span class="actor-badge">이석훈<span style="font-size: 0.7em; font-weight: normal;"> 첫공</span></span></div>
+  <div class="cell"><span class="actor-badge">차지연<span style="font-size: 0.7em; font-weight: normal;"> 첫공</span></span></div>
   <div class="cell"><span class="actor-badge">류승주</span></div>
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/8 (화) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">9/8<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">화<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거명우="박희준" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">9/8</div>
+  <div class="cell day">화<br><span style="font-size: 0.7em; font-weight: normal;">오픈위크</span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
-  <div class="cell"><span class="actor-badge">에녹</span></div>
-  <div class="cell"><span class="actor-badge">선예</span></div>
-  <div class="cell"><span class="actor-badge">문진아</span></div>
-  <div class="cell"><span class="actor-badge">박희준</span></div>
-  <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">에녹<span style="font-size: 0.7em; font-weight: normal;"> 첫공</span></span></div>
+  <div class="cell"><span class="actor-badge">선예<span style="font-size: 0.7em; font-weight: normal;"> 첫공</span></span></div>
+  <div class="cell"><span class="actor-badge">문진아<span style="font-size: 0.7em; font-weight: normal;"> 첫공</span></span></div>
+  <div class="cell"><span class="actor-badge">박희준<span style="font-size: 0.7em; font-weight: normal;"> 첫공</span></span></div>
+  <div class="cell"><span class="actor-badge">이은정<span style="font-size: 0.7em; font-weight: normal;"> 첫공</span></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/9 (수) 14:30 -->
-<div class="row" data-명우="손준호" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">9/9<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거명우="기세중" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">9/9</div>
+  <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;">오픈위크</span></div>
   <div class="cell time">14:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
   <div class="cell"><span class="actor-badge">서은광</span></div>
@@ -711,15 +695,15 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/9 (수) 19:30 -->
-<div class="row" data-명우="손준호" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">9/9<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거명우="기세중" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">9/9</div>
+  <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;">오픈위크</span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
   <div class="cell"><span class="actor-badge">차지연</span></div>
@@ -727,15 +711,15 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/10 (목) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">9/10<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">목<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거명우="박희준" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">9/10</div>
+  <div class="cell day">목<br><span style="font-size: 0.7em; font-weight: normal;">오픈위크</span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
   <div class="cell"><span class="actor-badge">에녹</span></div>
@@ -743,15 +727,15 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/11 (금) 19:30 -->
-<div class="row" data-명우="손준호" data-월하="서은광" data-수아="선예" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">9/11<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">금<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="서은광" data-수아="선예" data-시영="문진아" data-과거명우="기세중" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">9/11</div>
+  <div class="cell day">금<br><span style="font-size: 0.7em; font-weight: normal;">오픈위크</span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
   <div class="cell"><span class="actor-badge">서은광</span></div>
@@ -759,15 +743,15 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/12 (토) 14:00 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">9/12<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">9/12<br><span style="font-size: 0.7em; font-weight: normal;">  <br> </span></div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;">오픈위크</span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
   <div class="cell"><span class="actor-badge">차지연</span></div>
@@ -775,15 +759,15 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/12 (토) 18:30 -->
-<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">9/12<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">9/12</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;">오픈위크</span></div>
   <div class="cell time">18:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
   <div class="cell"><span class="actor-badge">차지연</span></div>
@@ -791,15 +775,15 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/13 (일) 14:00 -->
-<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">9/13<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="문진아" data-과거명우="기세중" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">9/13</div>
+  <div class="cell day day-sun">일<br><span style="font-size: 0.7em; font-weight: normal;">오픈위크</span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
   <div class="cell"><span class="actor-badge">서은광</span></div>
@@ -807,14 +791,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/15 (화) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">9/15<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">9/15</div>
   <div class="cell day">화<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -823,14 +807,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/16 (수) 14:30 -->
-<div class="row" data-명우="손준호" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">9/16<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거명우="기세중" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">9/16</div>
   <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -839,14 +823,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/16 (수) 19:30 -->
-<div class="row" data-명우="손준호" data-월하="서은광" data-수아="선예" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">9/16<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="서은광" data-수아="선예" data-시영="문진아" data-과거명우="기세중" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">9/16</div>
   <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -855,14 +839,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/17 (목) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">9/17<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="문진아" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">9/17</div>
   <div class="cell day">목<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -871,14 +855,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/18 (금) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">9/18<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거명우="박희준" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">9/18</div>
   <div class="cell day">금<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -887,15 +871,15 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/19 (토) 14:00 -->
-<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">9/19<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거명우="기세중" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">9/19</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
   <div class="cell"><span class="actor-badge">차지연</span></div>
@@ -903,15 +887,15 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/19 (토) 18:30 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">9/19<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거명우="기세중" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">9/19</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">18:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
   <div class="cell"><span class="actor-badge">차지연</span></div>
@@ -919,15 +903,15 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/20 (일) 14:00 -->
-<div class="row" data-명우="손준호" data-월하="에녹" data-수아="류승주" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">9/20<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="에녹" data-수아="류승주" data-시영="박세미" data-과거명우="박희준" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">9/20</div>
+  <div class="cell day day-sun">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
   <div class="cell"><span class="actor-badge">에녹</span></div>
@@ -935,14 +919,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/22 (화) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="선예" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">9/22<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="선예" data-시영="문진아" data-과거명우="박희준" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">9/22</div>
   <div class="cell day">화<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -951,14 +935,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/23 (수) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="류승주" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">9/23<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="류승주" data-시영="문진아" data-과거명우="기세중" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">9/23</div>
   <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -967,14 +951,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/24 (목) 14:00 -->
-<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">9/24<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거명우="박희준" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">9/24</div>
   <div class="cell day">목<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -983,14 +967,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/24 (목) 18:30 -->
-<div class="row" data-명우="손준호" data-월하="서은광" data-수아="선예" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">9/24<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="서은광" data-수아="선예" data-시영="박세미" data-과거명우="박희준" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">9/24</div>
   <div class="cell day">목<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">18:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -999,14 +983,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/25 (금) 18:30 -->
-<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="류승주" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">9/25<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="류승주" data-시영="박세미" data-과거명우="기세중" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">9/25</div>
   <div class="cell day">금<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">18:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1015,15 +999,15 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/26 (토) 14:00 -->
-<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">9/26<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">9/26</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
   <div class="cell"><span class="actor-badge">차지연</span></div>
@@ -1031,15 +1015,15 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/26 (토) 18:30 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">9/26<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">9/26</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">18:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
   <div class="cell"><span class="actor-badge">차지연</span></div>
@@ -1047,15 +1031,15 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/27 (일) 14:00 -->
-<div class="row" data-명우="손준호" data-월하="에녹" data-수아="류승주" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">9/27<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="에녹" data-수아="류승주" data-시영="박세미" data-과거명우="기세중" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">9/27</div>
+  <div class="cell day day-sun">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
   <div class="cell"><span class="actor-badge">에녹</span></div>
@@ -1063,14 +1047,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/29 (화) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">9/29<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거명우="기세중" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">9/29</div>
   <div class="cell day">화<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1079,14 +1063,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 9/30 (수) 19:30 -->
-<div class="row" data-명우="손준호" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">9/30<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거명우="기세중" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">9/30</div>
   <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1095,14 +1079,16 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
+<div class="month-divider">2026년 10월</div>
+
 <!-- 10/1 (목) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/1<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거명우="박희준" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">10/1</div>
   <div class="cell day">목<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1111,14 +1097,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/2 (금) 19:30 -->
-<div class="row" data-명우="손준호" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/2<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">10/2</div>
   <div class="cell day">금<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1127,15 +1113,15 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/3 (토) 14:00 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/3<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거명우="기세중" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">10/3</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
   <div class="cell"><span class="actor-badge">차지연</span></div>
@@ -1143,15 +1129,15 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/3 (토) 18:30 -->
-<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/3<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거명우="기세중" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">10/3</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">18:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
   <div class="cell"><span class="actor-badge">차지연</span></div>
@@ -1159,15 +1145,15 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/4 (일) 14:00 -->
-<div class="row" data-명우="손준호" data-월하="서은광" data-수아="류승주" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/4<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="서은광" data-수아="류승주" data-시영="문진아" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">10/4</div>
+  <div class="cell day day-sun">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
   <div class="cell"><span class="actor-badge">서은광</span></div>
@@ -1175,15 +1161,15 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/4 (일) 18:30 -->
-<div class="row" data-명우="손준호" data-월하="에녹" data-수아="류승주" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/4<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="에녹" data-수아="류승주" data-시영="문진아" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">10/4</div>
+  <div class="cell day day-sun">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">18:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
   <div class="cell"><span class="actor-badge">에녹</span></div>
@@ -1191,14 +1177,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/5 (월) 14:00 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/5<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거명우="기세중" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">10/5</div>
   <div class="cell day">월<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1207,14 +1193,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/7 (수) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/7<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">10/7</div>
   <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1223,14 +1209,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/8 (목) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/8<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거명우="기세중" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">10/8</div>
   <div class="cell day">목<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1239,14 +1225,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/9 (금) 14:00 -->
-<div class="row" data-명우="손준호" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/9<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거명우="박희준" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">10/9</div>
   <div class="cell day">금<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1255,14 +1241,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/9 (금) 18:30 -->
-<div class="row" data-명우="손준호" data-월하="에녹" data-수아="류승주" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/9<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="에녹" data-수아="류승주" data-시영="박세미" data-과거명우="박희준" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">10/9</div>
   <div class="cell day">금<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">18:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1271,15 +1257,15 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/10 (토) 14:00 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/10<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거명우="기세중" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">10/10</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
   <div class="cell"><span class="actor-badge">차지연</span></div>
@@ -1287,15 +1273,15 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/10 (토) 18:30 -->
-<div class="row" data-명우="손준호" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/10<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거명우="기세중" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">10/10</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">18:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
   <div class="cell"><span class="actor-badge">에녹</span></div>
@@ -1303,15 +1289,15 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/11 (일) 14:00 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/11<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거명우="박희준" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">10/11</div>
+  <div class="cell day day-sun">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
   <div class="cell"><span class="actor-badge">차지연</span></div>
@@ -1319,14 +1305,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/13 (화) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/13<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="문진아" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">10/13</div>
   <div class="cell day">화<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1335,14 +1321,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/14 (수) 14:30 -->
-<div class="row" data-명우="손준호" data-월하="에녹" data-수아="선예" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/14<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="에녹" data-수아="선예" data-시영="박세미" data-과거명우="기세중" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">10/14</div>
   <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1351,14 +1337,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/14 (수) 19:30 -->
-<div class="row" data-명우="손준호" data-월하="서은광" data-수아="선예" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/14<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="서은광" data-수아="선예" data-시영="박세미" data-과거명우="기세중" data-과거수아="이은정" data-중곤="한상호">
+  <div class="cell date">10/14</div>
   <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1367,14 +1353,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/15 (목) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/15<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="문진아" data-과거명우="박희준" data-과거수아="김서연" data-중곤="한상호">
+  <div class="cell date">10/15</div>
   <div class="cell day">목<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1383,14 +1369,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/16 (금) 19:30 -->
-<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/16<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거명우="기세중" data-과거수아="김서연" data-중곤="한상호">
+  <div class="cell date">10/16</div>
   <div class="cell day">금<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1399,15 +1385,15 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/17 (토) 14:00 -->
-<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="류승주" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/17<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="류승주" data-시영="박세미" data-과거명우="박희준" data-과거수아="이은정" data-중곤="한상호">
+  <div class="cell date">10/17</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
   <div class="cell"><span class="actor-badge">에녹</span></div>
@@ -1415,15 +1401,15 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/17 (토) 18:30 -->
-<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="류승주" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/17<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="류승주" data-시영="박세미" data-과거명우="박희준" data-과거수아="이은정" data-중곤="한상호">
+  <div class="cell date">10/17</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">18:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
   <div class="cell"><span class="actor-badge">에녹</span></div>
@@ -1431,15 +1417,15 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/18 (일) 18:30 -->
-<div class="row" data-명우="손준호" data-월하="서은광" data-수아="류승주" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/18<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="서은광" data-수아="류승주" data-시영="문진아" data-과거명우="기세중" data-과거수아="김서연" data-중곤="한상호">
+  <div class="cell date">10/18</div>
+  <div class="cell day day-sun">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">18:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
   <div class="cell"><span class="actor-badge">서은광</span></div>
@@ -1447,14 +1433,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/20 (화) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/20<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="문진아" data-과거명우="박희준" data-과거수아="이은정" data-중곤="한상호">
+  <div class="cell date">10/20</div>
   <div class="cell day">화<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1463,14 +1449,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/21 (수) 14:30 -->
-<div class="row" data-명우="손준호" data-월하="에녹" data-수아="선예" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/21<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="에녹" data-수아="선예" data-시영="박세미" data-과거명우="기세중" data-과거수아="김서연" data-중곤="한상호">
+  <div class="cell date">10/21</div>
   <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1479,14 +1465,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/21 (수) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/21<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거명우="기세중" data-과거수아="김서연" data-중곤="한상호">
+  <div class="cell date">10/21</div>
   <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1495,14 +1481,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/22 (목) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/22<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거명우="박희준" data-과거수아="이은정" data-중곤="한상호">
+  <div class="cell date">10/22</div>
   <div class="cell day">목<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1511,14 +1497,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/23 (금) 19:30 -->
-<div class="row" data-명우="손준호" data-월하="서은광" data-수아="류승주" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/23<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="서은광" data-수아="류승주" data-시영="문진아" data-과거명우="박희준" data-과거수아="김서연" data-중곤="한상호">
+  <div class="cell date">10/23</div>
   <div class="cell day">금<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1527,15 +1513,15 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/24 (토) 14:00 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/24<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거명우="기세중" data-과거수아="이은정" data-중곤="한상호">
+  <div class="cell date">10/24</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
   <div class="cell"><span class="actor-badge">차지연</span></div>
@@ -1543,15 +1529,15 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/24 (토) 18:30 -->
-<div class="row" data-명우="손준호" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/24<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거명우="기세중" data-과거수아="이은정" data-중곤="한상호">
+  <div class="cell date">10/24</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">18:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
   <div class="cell"><span class="actor-badge">차지연</span></div>
@@ -1559,15 +1545,15 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/25 (일) 14:00 -->
-<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/25<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거명우="박희준" data-과거수아="김서연" data-중곤="한상호">
+  <div class="cell date">10/25</div>
+  <div class="cell day day-sun">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
   <div class="cell"><span class="actor-badge">에녹</span></div>
@@ -1575,14 +1561,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/27 (화) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="선예" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/27<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="선예" data-시영="박세미" data-과거명우="기세중" data-과거수아="이은정" data-중곤="한상호">
+  <div class="cell date">10/27</div>
   <div class="cell day">화<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1591,14 +1577,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/28 (수) 14:30 -->
-<div class="row" data-명우="손준호" data-월하="차지연" data-수아="류승주" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/28<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="차지연" data-수아="류승주" data-시영="문진아" data-과거명우="박희준" data-과거수아="김서연" data-중곤="한상호">
+  <div class="cell date">10/28</div>
   <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1607,14 +1593,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/28 (수) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/28<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="문진아" data-과거명우="기세중" data-과거수아="김서연" data-중곤="한상호">
+  <div class="cell date">10/28</div>
   <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1623,14 +1609,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/29 (목) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/29<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거명우="박희준" data-과거수아="김서연" data-중곤="한상호">
+  <div class="cell date">10/29</div>
   <div class="cell day">목<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1639,14 +1625,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/30 (금) 14:30 -->
-<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/30<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거명우="박희준" data-과거수아="이은정" data-중곤="한상호">
+  <div class="cell date">10/30</div>
   <div class="cell day">금<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1655,14 +1641,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/30 (금) 19:30 -->
-<div class="row" data-명우="손준호" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">10/30<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거명우="기세중" data-과거수아="이은정" data-중곤="한상호">
+  <div class="cell date">10/30</div>
   <div class="cell day">금<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1671,15 +1657,15 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/31 (토) 14:00 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/31<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거명우="기세중" data-과거수아="김서연" data-중곤="한상호">
+  <div class="cell date">10/31</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
   <div class="cell"><span class="actor-badge">차지연</span></div>
@@ -1687,15 +1673,15 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 10/31 (토) 18:30 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">10/31<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거명우="기세중" data-과거수아="김서연" data-중곤="한상호">
+  <div class="cell date">10/31</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">18:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
   <div class="cell"><span class="actor-badge">차지연</span></div>
@@ -1703,15 +1689,17 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
+<div class="month-divider">2026년 11월</div>
+
 <!-- 11/1 (일) 14:00 -->
-<div class="row" data-명우="손준호" data-월하="서은광" data-수아="선예" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">11/1<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="서은광" data-수아="선예" data-시영="문진아" data-과거명우="박희준" data-과거수아="이은정" data-중곤="한상호">
+  <div class="cell date">11/1</div>
+  <div class="cell day day-sun">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
   <div class="cell"><span class="actor-badge">서은광</span></div>
@@ -1719,14 +1707,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">한상호</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/3 (화) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="선예" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">11/3<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="선예" data-시영="박세미" data-과거명우="기세중" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">11/3</div>
   <div class="cell day">화<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1735,14 +1723,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/4 (수) 14:30 -->
-<div class="row" data-명우="손준호" data-월하="서은광" data-수아="선예" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">11/4<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="서은광" data-수아="선예" data-시영="문진아" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">11/4</div>
   <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1751,14 +1739,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/4 (수) 19:30 -->
-<div class="row" data-명우="손준호" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">11/4<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">11/4</div>
   <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1767,14 +1755,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/5 (목) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">11/5<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거명우="기세중" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">11/5</div>
   <div class="cell day">목<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1783,14 +1771,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/6 (금) 14:30 -->
-<div class="row" data-명우="손준호" data-월하="서은광" data-수아="선예" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">11/6<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="서은광" data-수아="선예" data-시영="박세미" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">11/6</div>
   <div class="cell day">금<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1799,14 +1787,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/6 (금) 19:30 -->
-<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">11/6<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">11/6</div>
   <div class="cell day">금<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1815,15 +1803,15 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/7 (토) 14:00 -->
-<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="류승주" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">11/7<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="류승주" data-시영="문진아" data-과거명우="기세중" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">11/7</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
   <div class="cell"><span class="actor-badge">에녹</span></div>
@@ -1831,15 +1819,15 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/7 (토) 18:30 -->
-<div class="row" data-명우="손준호" data-월하="차지연" data-수아="류승주" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">11/7<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="차지연" data-수아="류승주" data-시영="문진아" data-과거명우="기세중" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">11/7</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">18:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
   <div class="cell"><span class="actor-badge">차지연</span></div>
@@ -1847,15 +1835,15 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/8 (일) 14:00 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">11/8<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="문진아" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">11/8</div>
+  <div class="cell day day-sun">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
   <div class="cell"><span class="actor-badge">차지연</span></div>
@@ -1863,14 +1851,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/10 (화) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">11/10<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="서은광" data-수아="류승주" data-시영="문진아" data-과거명우="기세중" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">11/10</div>
   <div class="cell day">화<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1879,14 +1867,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/11 (수) 14:30 -->
-<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">11/11<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거명우="박희준" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">11/11</div>
   <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1895,14 +1883,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/11 (수) 19:30 -->
-<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">11/11<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="차지연" data-수아="선예" data-시영="박세미" data-과거명우="기세중" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">11/11</div>
   <div class="cell day">수<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1911,14 +1899,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">기세중</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/12 (목) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">11/12<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">11/12</div>
   <div class="cell day">목<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1927,14 +1915,14 @@ body {
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/13 (금) 14:30 -->
-<div class="row" data-명우="손준호" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">11/13<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="손준호" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거명우="박희준" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">11/13</div>
   <div class="cell day">금<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:30</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
@@ -1943,14 +1931,14 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/13 (금) 19:30 -->
-<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거 명우="박희준" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">11/13<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
+<div class="row" data-명우="이석훈" data-월하="차지연" data-수아="선예" data-시영="문진아" data-과거명우="박희준" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">11/13</div>
   <div class="cell day">금<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">19:30</div>
   <div class="cell"><span class="actor-badge">이석훈</span></div>
@@ -1959,47 +1947,47 @@ body {
   <div class="cell"><span class="actor-badge">문진아</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">이은정</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/14 (토) 14:00 -->
-<div class="row" data-명우="손준호" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">11/14<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="서은광" data-수아="류승주" data-시영="박세미" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">11/14</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">손준호</span></div>
-  <div class="cell"><span class="actor-badge">서은광</span></div>
+  <div class="cell"><span class="actor-badge">서은광<span style="font-size: 0.7em; font-weight: normal;"> 막공</span></span></div>
   <div class="cell"><span class="actor-badge">류승주</span></div>
   <div class="cell"><span class="actor-badge">박세미</span></div>
   <div class="cell"><span class="actor-badge">박희준</span></div>
   <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/14 (토) 18:30 -->
-<div class="row" data-명우="손준호" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거 명우="박희준" data-과거 수아="김서연" data-중곤="">
-  <div class="cell date">11/14<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
+<div class="row" data-명우="손준호" data-월하="차지연" data-수아="류승주" data-시영="박세미" data-과거명우="박희준" data-과거수아="김서연" data-중곤="김민수">
+  <div class="cell date">11/14</div>
+  <div class="cell day day-sat">토<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">18:30</div>
-  <div class="cell"><span class="actor-badge">손준호</span></div>
-  <div class="cell"><span class="actor-badge">차지연</span></div>
-  <div class="cell"><span class="actor-badge">류승주</span></div>
-  <div class="cell"><span class="actor-badge">박세미</span></div>
-  <div class="cell"><span class="actor-badge">박희준</span></div>
-  <div class="cell"><span class="actor-badge">김서연</span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">손준호<span style="font-size: 0.7em; font-weight: normal;"> 막공</span></span></div>
+  <div class="cell"><span class="actor-badge">차지연<span style="font-size: 0.7em; font-weight: normal;"> 막공</span></span></div>
+  <div class="cell"><span class="actor-badge">류승주<span style="font-size: 0.7em; font-weight: normal;"> 막공</span></span></div>
+  <div class="cell"><span class="actor-badge">박세미<span style="font-size: 0.7em; font-weight: normal;"> 막공</span></span></div>
+  <div class="cell"><span class="actor-badge">박희준<span style="font-size: 0.7em; font-weight: normal;"> 막공</span></span></div>
+  <div class="cell"><span class="actor-badge">김서연<span style="font-size: 0.7em; font-weight: normal;"> 막공</span></span></div>
+  <div class="cell"><span class="actor-badge">김민수</span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 
 <!-- 11/15 (일) 14:00 -->
-<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거 명우="기세중" data-과거 수아="이은정" data-중곤="">
-  <div class="cell date">11/15<br><span style="font-size: 0.7em; font-weight: normal;"> /<br> </span></div>
-  <div class="cell day">일<br><span style="font-size: 0.7em; font-weight: normal;">막공</span></div>
+<div class="row" data-명우="이석훈" data-월하="에녹" data-수아="선예" data-시영="문진아" data-과거명우="기세중" data-과거수아="이은정" data-중곤="김민수">
+  <div class="cell date">11/15</div>
+  <div class="cell day day-sun">일<br><span style="font-size: 0.7em; font-weight: normal;"> </span></div>
   <div class="cell time">14:00</div>
   <div class="cell"><span class="actor-badge">이석훈<span style="font-size: 0.7em; font-weight: normal;"> 막공</span></span></div>
   <div class="cell"><span class="actor-badge">에녹<span style="font-size: 0.7em; font-weight: normal;"> 막공</span></span></div>
@@ -2007,13 +1995,15 @@ body {
   <div class="cell"><span class="actor-badge">문진아<span style="font-size: 0.7em; font-weight: normal;"> 막공</span></span></div>
   <div class="cell"><span class="actor-badge">기세중<span style="font-size: 0.7em; font-weight: normal;"> 막공</span></span></div>
   <div class="cell"><span class="actor-badge">이은정<span style="font-size: 0.7em; font-weight: normal;"> 막공</span></span></div>
-  <div class="cell"><span class="actor-badge"></span></div>
+  <div class="cell"><span class="actor-badge">김민수<span style="font-size: 0.7em; font-weight: normal;"> 막공</span></span></div>
   <div class="cell"><input class="seat-input" placeholder=" " oninput="updateAllSeats()"></div>
   <div class="cell"><button class="copy-btn" onclick="copyRow(this)">🎵️</button></div>
 </div>
 		
     </div>
   </div>
+  
+  
   
   <!-- 정산 섹션 -->
   <div class="settle-wrap">
@@ -2051,7 +2041,7 @@ body {
               <div class="cnt-num"><span id="cnt-월하-2">0</span></div>
               <div class="cnt-label" id="lbl-월하-2">/ 0회</div>
             </div>
-			<div class="count-card">
+            <div class="count-card">
               <div class="cnt-name">서은광</div>
               <div class="cnt-num"><span id="cnt-월하-3">0</span></div>
               <div class="cnt-label" id="lbl-월하-3">/ 0회</div>
@@ -2063,7 +2053,7 @@ body {
           <div class="cgl">수아</div>
           <div class="counting-box">    
             <div class="count-card">
-              <div class="cnt-name">류승수</div>
+              <div class="cnt-name">류승주</div>
               <div class="cnt-num"><span id="cnt-수아-1">0</span></div>
               <div class="cnt-label" id="lbl-수아-1">/ 0회</div>
             </div>
@@ -2074,8 +2064,8 @@ body {
             </div>
           </div>
         </div>
-		
-		<div class="role-card">
+        
+        <div class="role-card">
           <div class="cgl">시영</div>
           <div class="counting-box">    
             <div class="count-card">
@@ -2090,40 +2080,40 @@ body {
             </div>
           </div>
         </div>
-		
-		<div class="role-card">
-          <div class="cgl">과거 명우</div>
+        
+        <div class="role-card">
+          <div class="cgl">과거명우</div>
           <div class="counting-box">    
             <div class="count-card">
               <div class="cnt-name">기세중</div>
-              <div class="cnt-num"><span id="cnt-과거 명우-1">0</span></div>
-              <div class="cnt-label" id="lbl-과거 명우-1">/ 0회</div>
+              <div class="cnt-num"><span id="cnt-과거명우-1">0</span></div>
+              <div class="cnt-label" id="lbl-과거명우-1">/ 0회</div>
             </div>
             <div class="count-card">
               <div class="cnt-name">박희준</div>
-              <div class="cnt-num"><span id="cnt-과거 명우-2">0</span></div>
-              <div class="cnt-label" id="lbl-과거 명우-2">/ 0회</div>
+              <div class="cnt-num"><span id="cnt-과거명우-2">0</span></div>
+              <div class="cnt-label" id="lbl-과거명우-2">/ 0회</div>
             </div>
           </div>
         </div>
-		
-		<div class="role-card">
-          <div class="cgl">과거 수아</div>
+        
+        <div class="role-card">
+          <div class="cgl">과거수아</div>
           <div class="counting-box">    
             <div class="count-card">
               <div class="cnt-name">김서연</div>
-              <div class="cnt-num"><span id="cnt-과거 수아-1">0</span></div>
-              <div class="cnt-label" id="lbl-과거 수아-1">/ 0회</div>
+              <div class="cnt-num"><span id="cnt-과거수아-1">0</span></div>
+              <div class="cnt-label" id="lbl-과거수아-1">/ 0회</div>
             </div>
             <div class="count-card">
               <div class="cnt-name">이은정</div>
-              <div class="cnt-num"><span id="cnt-과거 수아-2">0</span></div>
-              <div class="cnt-label" id="lbl-과거 수아-2">/ 0회</div>
+              <div class="cnt-num"><span id="cnt-과거수아-2">0</span></div>
+              <div class="cnt-label" id="lbl-과거수아-2">/ 0회</div>
             </div>
           </div>
         </div>
-		
-		<div class="role-card">
+        
+        <div class="role-card">
           <div class="cgl">중곤</div>
           <div class="counting-box">    
             <div class="count-card">
@@ -2138,7 +2128,7 @@ body {
             </div>
           </div>
         </div>
-		
+        
       </div>
 
       <div class="cnt-total-box">
@@ -2155,30 +2145,38 @@ body {
   <!-- 좌석 배치도 -->
   <div class="seating-section">
     <div class="seating-title">SEATING MAP</div>
-    <div class="seating-desc">좌석 입력 시 관람 횟수에 맞춰 도면에 색상이 자동으로 강조됩니다.</div>
+    <div class="seating-desc">좌석 입력 시(예: A구역 3열 5, 나 10열 8) 관람 횟수에 맞춰 도면에 색상이 자동으로 강조됩니다.</div>
     
     <div class="seat-legend">
-	<div class="legend-item"><div class="legend-box" style="background:#3b82f6;"></div> 1회</div>
-    <div class="legend-item"><div class="legend-box" style="background:#6366f1;"></div> 2회</div>
-    <div class="legend-item"><div class="legend-box" style="background:#a855f7;"></div> 3회</div>
-    <div class="legend-item"><div class="legend-box" style="background:#ec4899;"></div> 4회</div>
-    <div class="legend-item"><div class="legend-box" style="background:#ff7ebd;"></div> 5회 이상</div>
+      <div class="legend-item"><div class="legend-box" style="background:#8d6b94;"></div> 1회</div>
+      <div class="legend-item"><div class="legend-box" style="background:#c96480;"></div> 2회</div>
+      <div class="legend-item"><div class="legend-box" style="background:#e07a5f;"></div> 3회</div>
+      <div class="legend-item"><div class="legend-box" style="background:#e76f51;"></div> 4회</div>
+      <div class="legend-item"><div class="legend-box" style="background:#f2cc8f;"></div> 5회 이상</div>
     </div>
 
     <div class="stage-box">무   대</div>
 
-    <div class="block-headers">
-      <div class="block-header">A</div>
-      <div class="block-header">B</div>
-    </div>
+    <div class="seat-scroll-wrap">
+      <div class="seat-inner-wrap">
+        <div class="block-headers">
+          <div class="block-header">A</div>
+          <div class="block-header">B</div>
+          <div class="block-header">C</div>
+        </div>
 
-    <div class="seat-map-wrapper">
-      <div class="seat-block" id="blockA"></div>
-      <div class="seat-block" id="blockB"></div>
+        <div class="seat-map-wrapper">
+          <div class="seat-block" id="blockA"></div>
+          <div class="seat-block" id="blockB"></div>
+          <div class="seat-block" id="blockC"></div>
+        </div>
+      </div>
     </div>
   </div>
 
 <script>
+let currentFloor = "1F";
+
 const layoutData = {
   // ==================== 1층 (1F) ====================
   "1F": {
@@ -2204,28 +2202,10 @@ const layoutData = {
       { row: '19열', seats: [{ gap: true }, { gap: true }, { gap: true }, { gap: true }, { gap: true }, { gap: true }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }, { num: 13 }, { num: 14 }, { num: 15 }] },
       { row: '20열', seats: [{ gap: true }, { gap: true }, { gap: true }, { gap: true }, { gap: true }, { gap: true }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }, { num: 13 }, { num: 14 }, { num: 15 }] }
     ],
-    B: [
-      { row: '1열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '2열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '3열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '4열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '5열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '6열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '7열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '8열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '9열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '10열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '11열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '12열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '13열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '14열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '15열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '16열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '17열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '18열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '19열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) },
-      { row: '20열', seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 })) }
-    ],
+    B: Array.from({ length: 20 }, (_, r) => ({
+      row: `${r + 1}열`,
+      seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 }))
+    })),
     C: [
       { row: '1열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { gap: true }] },
       { row: '2열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { gap: true }] },
@@ -2242,10 +2222,16 @@ const layoutData = {
       { row: '13열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }, { num: 13 }, { num: 14 }, { gap: true }] },
       { row: '14열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }, { num: 13 }, { gap: true }, { gap: true }] },
       { row: '15열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }, { gap: true }, { gap: true }, { gap: true }] },
-      { row: '16열', seats: [{ num: 1 }, { num: 2 }, { num:
+      { row: '16열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { gap: true }, { gap: true }, { gap: true }, { gap: true }] },
+      { row: '17열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { gap: true }, { gap: true }, { gap: true }, { gap: true }, { gap: true }] },
+      { row: '18열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { gap: true }, { gap: true }, { gap: true }, { gap: true }, { gap: true }] },
+      { row: '19열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { gap: true }, { gap: true }, { gap: true }, { gap: true }, { gap: true }, { gap: true }] },
+      { row: '20열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { gap: true }, { gap: true }, { gap: true }, { gap: true }, { gap: true }, { gap: true }] }
+    ]
+  }
+};
 
-functiofunction renderSectionalSeatMap() {
-  // 현재 선택된 층('1F' 또는 '2F') - 전역 변수로 관리된다고 가정합니다.
+function renderSectionalSeatMap() {
   const floorData = layoutData[currentFloor] || layoutData['1F']; 
 
   const renderBlock = (blockKey, containerId, showLeftLabel, showRightLabel) => {
@@ -2253,7 +2239,6 @@ functiofunction renderSectionalSeatMap() {
     if (!container) return;
     container.innerHTML = '';
 
-    // 해당 층에 블록 데이터가 없으면 리턴
     if (!floorData[blockKey]) return;
 
     floorData[blockKey].forEach(rowData => {
@@ -2283,7 +2268,7 @@ functiofunction renderSectionalSeatMap() {
           seat.dataset.row = rowData.row;
           seat.dataset.num = seatInfo.num;
           seat.dataset.block = blockKey;
-          seat.dataset.floor = currentFloor; // 층 정보 추가
+          seat.dataset.floor = currentFloor;
 
           gridDiv.appendChild(seat);
         }
@@ -2302,9 +2287,8 @@ functiofunction renderSectionalSeatMap() {
     });
   };
 
-  // C구역이 추가되었으므로 필요에 맞게 호출 (예: A, B, C 구역 ID에 맞춰 지정)
   renderBlock('A', 'blockA', true, false);
-  renderBlock('B', 'blockB', false, false); // 필요시 양쪽 라벨 설정 조정
+  renderBlock('B', 'blockB', false, false);
   renderBlock('C', 'blockC', false, true);
 }
 
@@ -2321,10 +2305,9 @@ function updateAllSeats() {
     if (!val) return;
 
     let block = '';
-    // A, B, C 구역 및 한글 구역(가, 나, 다) 인식 추가
-    if (val.includes('A') || val.includes('가')) block = 'A';
-    else if (val.includes('B') || val.includes('나')) block = 'B';
-    else if (val.includes('C') || val.includes('다')) block = 'C';
+    if (val.includes('A') || val.includes('a') || val.includes('가')) block = 'A';
+    else if (val.includes('B') || val.includes('b') || val.includes('나')) block = 'B';
+    else if (val.includes('C') || val.includes('c') || val.includes('다')) block = 'C';
 
     const str = val.replace(/\s+/g, '');
     const rowMatch = str.match(/(\d+열)/);
@@ -2334,14 +2317,12 @@ function updateAllSeats() {
       const row = rowMatch[0];
       const num = numMatch[0];
       
-      // 구역이 명시된 경우와 없는 경우를 고려한 키 생성
       const key = block ? `${block}-${row}-${num}` : `${row}-${num}`;
       seatCounts[key] = (seatCounts[key] || 0) + 1;
     }
   });
 
   document.querySelectorAll('.seat').forEach(seat => {
-    // 현재 좌석의 구역과 번호로 매칭
     const keyWithBlock = `${seat.dataset.block}-${seat.dataset.row}-${seat.dataset.num}`;
     const keyWithoutBlock = `${seat.dataset.row}-${seat.dataset.num}`;
     
@@ -2424,17 +2405,20 @@ function resetFilter() {
 
 function copyRow(btn) {
   const row = btn.closest('.row');
-  const date = row.querySelector('.date') ? row.querySelector('.date').innerText.replace(/\n/g, ' ') : '';
-  const day = row.querySelector('.day') ? row.querySelector('.day').innerText.replace(/\n/g, ' ') : '';
+  const date = row.querySelector('.date') ? row.querySelector('.date').innerText.replace(/\n/g, ' ').replace(/\//g, '').trim() : '';
+  const day = row.querySelector('.day') ? row.querySelector('.day').innerText.replace(/\n/g, ' ').trim() : '';
   const time = row.querySelector('.time') ? row.querySelector('.time').innerText : '';
   const seatInput = row.querySelector('.seat-input');
   const seat = seatInput ? seatInput.value : '';
 
-  const A = row.getAttribute('data-A') || '';
-  const B = row.getAttribute('data-B') || '';
+  const roles = ['명우', '월하', '수아', '시영', '과거명우', '과거수아', '중곤'];
+  const roleLabels = { '과거명우': '과거 명우', '과거수아': '과거 수아' };
+  
+  const castLines = roles
+    .map(r => `· ${roleLabels[r] || r}: ${row.getAttribute(`data-${r}`) || '-'}`)
+    .join('\n');
 
-  let text = `[뮤지컬 광화문연가] ${date}(${day}) ${time}\n`;
-  text += `· A: ${A}\n· B: ${B}`;
+  let text = `[뮤지컬 광화문연가] ${date}(${day}) ${time}\n${castLines}`;
   if (seat) text += `\n· 내 좌석: ${seat}`;
 
   navigator.clipboard.writeText(text).then(() => {
@@ -2458,7 +2442,7 @@ function updateCastingCounts() {
       totalWatchedCount++;
     }
 
-    ['A', 'B'].forEach(role => {
+    ['명우', '월하', '수아', '시영', '과거명우', '과거수아', '중곤'].forEach(role => {
       const actorName = row.getAttribute(`data-${role}`);
       if (actorName) {
         actorTotalMap[actorName] = (actorTotalMap[actorName] || 0) + 1;
@@ -2505,21 +2489,17 @@ function updateCastingCounts() {
   if (totalLblEl) totalLblEl.innerText = `/ ${totalSchedules}회`;
 }
 
-// 자동 저장 함수 (입력값 전체를 배열로 로컬 스토리지에 기록)
 function autoSaveData() {
   const inputs = document.querySelectorAll('.seat-input');
   const inputValues = Array.from(inputs).map(input => input.value);
-  localStorage.setItem('puberty_seat_backup_v2', JSON.stringify(inputValues));
+  localStorage.setItem('gwanghwamun_seat_backup_v2', JSON.stringify(inputValues));
 }
 
-// 페이지가 로드될 때 실행되는 통합 메인 로직
 document.addEventListener('DOMContentLoaded', () => {
   renderSectionalSeatMap();
 
   const inputs = document.querySelectorAll('.seat-input');
-
-  // 1. 로컬 스토리지에 저장된 데이터 불러와서 input에 채워넣기
-const savedString = localStorage.getItem('puberty_seat_backup_v2'); // 충돌 방지를 위해 키 이름 변경
+  const savedString = localStorage.getItem('gwanghwamun_seat_backup_v2');
   if (savedString) {
     try {
       const inputValues = JSON.parse(savedString);
@@ -2535,11 +2515,9 @@ const savedString = localStorage.getItem('puberty_seat_backup_v2'); // 충돌 �
     }
   }
 
-  // 2. 초기 화면 갱신 및 정산
   updateAllSeats();
   updateCastingCounts();
 
-  // 3. input 값이 바뀔 때마다 실시간 자동 저장 및 화면 업데이트
   inputs.forEach(input => {
     input.addEventListener('input', () => {
       autoSaveData();
@@ -2548,17 +2526,16 @@ const savedString = localStorage.getItem('puberty_seat_backup_v2'); // 충돌 �
     });
   });
 
-// 4. 내보내기 버튼 이벤트
   const btnExport = document.getElementById('btn-export');
   if (btnExport) {
     btnExport.addEventListener('click', () => {
-      autoSaveData(); // 최신 상태로 동기화
-      const jsonString = localStorage.getItem('puberty_seat_backup_v2');
+      autoSaveData();
+      const jsonString = localStorage.getItem('gwanghwamun_seat_backup_v2');
       
       const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(jsonString);
       const downloadAnchor = document.createElement('a');
       downloadAnchor.setAttribute("href", dataStr);
-      downloadAnchor.setAttribute("download", "puberty_seat_backup.json");
+      downloadAnchor.setAttribute("download", "gwanghwamun_seat_backup.json");
       document.body.appendChild(downloadAnchor);
       downloadAnchor.click();
       downloadAnchor.remove();
@@ -2567,7 +2544,6 @@ const savedString = localStorage.getItem('puberty_seat_backup_v2'); // 충돌 �
     });
   }
 
-  // 5. 가져오기 버튼 이벤트 (오류 없이 안전하게 호환되는 버전)
   const btnImport = document.getElementById('btn-import');
   if (btnImport) {
     btnImport.addEventListener('click', () => {
@@ -2583,20 +2559,15 @@ const savedString = localStorage.getItem('puberty_seat_backup_v2'); // 충돌 �
         reader.onload = (event) => {
           try {
             const fileData = JSON.parse(event.target.result);
-            
-            // 모든 입력창 초기화
             inputs.forEach(input => input.value = '');
 
-            // 파일 데이터가 객체 배열 형태인 경우 (구버전 호환)
             if (Array.isArray(fileData) && typeof fileData[0] === 'object' && fileData[0] !== null) {
               fileData.forEach(item => {
                 if (item.index !== undefined && inputs[item.index] !== undefined) {
                   inputs[item.index].value = item.value || '';
                 }
               });
-            } 
-            // 파일 데이터가 단순 문자열 배열 형태인 경우 (신버전)
-            else if (Array.isArray(fileData)) {
+            } else if (Array.isArray(fileData)) {
               inputs.forEach((input, index) => {
                 if (fileData[index] !== undefined) {
                   input.value = fileData[index];
@@ -2604,7 +2575,7 @@ const savedString = localStorage.getItem('puberty_seat_backup_v2'); // 충돌 �
               });
             }
 
-            autoSaveData(); // 최신 저장소에 반영
+            autoSaveData();
             updateAllSeats();
             updateCastingCounts();
             alert('백업 파일에서 데이터를 성공적으로 불러왔습니다.');
@@ -2620,7 +2591,6 @@ const savedString = localStorage.getItem('puberty_seat_backup_v2'); // 충돌 �
     });
   }
 });
-	
 </script>
 </body>
 </html>
