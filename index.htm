@@ -2145,8 +2145,14 @@ body {
   <!-- 좌석 배치도 -->
   <div class="seating-section">
     <div class="seating-title">SEATING MAP</div>
-    <div class="seating-desc">좌석 입력 시(예: A구역 3열 5, 나 10열 8) 관람 횟수에 맞춰 도면에 색상이 자동으로 강조됩니다.</div>
+    <div class="seating-desc">좌석 입력 시(예: A구역 3열 5, 2층 B구역 4열 8) 관람 횟수에 맞춰 도면에 색상이 자동으로 강조됩니다.</div>
     
+    <!-- 층 선택 버튼 추가 -->
+    <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 18px;">
+      <button class="btn-all active" id="btn-floor-1F" onclick="switchFloor('1F')">1층 객석</button>
+      <button class="btn-all" id="btn-floor-2F" onclick="switchFloor('2F')">2층 객석</button>
+    </div>
+
     <div class="seat-legend">
       <div class="legend-item"><div class="legend-box" style="background:#8d6b94;"></div> 1회</div>
       <div class="legend-item"><div class="legend-box" style="background:#c96480;"></div> 2회</div>
@@ -2228,8 +2234,50 @@ const layoutData = {
       { row: '19열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { gap: true }, { gap: true }, { gap: true }, { gap: true }, { gap: true }, { gap: true }] },
       { row: '20열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { gap: true }, { gap: true }, { gap: true }, { gap: true }, { gap: true }, { gap: true }] }
     ]
+  },
+
+  // ==================== 2층 (2F - 디큐브 링크아트센터) ====================
+  "2F": {
+    A: [
+      { row: '1열', seats: [{ gap: true }, { gap: true }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }] },
+      { row: '2열', seats: [{ gap: true }, { gap: true }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }] },
+      { row: '3열', seats: [{ gap: true }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }] },
+      { row: '4열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }] },
+      { row: '5열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }] },
+      { row: '6열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }] },
+      { row: '7열', seats: [{ gap: true }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }] },
+      { row: '8열', seats: [{ gap: true }, { gap: true }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }] },
+      { row: '9열', seats: [{ gap: true }, { gap: true }, { gap: true }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }] },
+      { row: '10열', seats: [{ gap: true }, { gap: true }, { gap: true }, { gap: true }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }] },
+      { row: '11열', seats: [{ gap: true }, { gap: true }, { gap: true }, { gap: true }, { gap: true }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }] }
+    ],
+    B: Array.from({ length: 11 }, (_, r) => ({
+      row: `${r + 1}열`,
+      seats: Array.from({ length: 18 }, (_, i) => ({ num: i + 1 }))
+    })),
+    C: [
+      { row: '1열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { gap: true }, { gap: true }] },
+      { row: '2열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { gap: true }, { gap: true }] },
+      { row: '3열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { gap: true }] },
+      { row: '4열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }] },
+      { row: '5열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }] },
+      { row: '6열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { num: 12 }] },
+      { row: '7열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { num: 11 }, { gap: true }] },
+      { row: '8열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { num: 10 }, { gap: true }, { gap: true }] },
+      { row: '9열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { num: 9 }, { gap: true }, { gap: true }, { gap: true }] },
+      { row: '10열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { num: 8 }, { gap: true }, { gap: true }, { gap: true }, { gap: true }] },
+      { row: '11열', seats: [{ num: 1 }, { num: 2 }, { num: 3 }, { num: 4 }, { num: 5 }, { num: 6 }, { num: 7 }, { gap: true }, { gap: true }, { gap: true }, { gap: true }, { gap: true }] }
+    ]
   }
 };
+
+function switchFloor(floor) {
+  currentFloor = floor;
+  document.getElementById('btn-floor-1F').classList.toggle('active', floor === '1F');
+  document.getElementById('btn-floor-2F').classList.toggle('active', floor === '2F');
+  renderSectionalSeatMap();
+  updateAllSeats();
+}
 
 function renderSectionalSeatMap() {
   const floorData = layoutData[currentFloor] || layoutData['1F']; 
@@ -2304,12 +2352,20 @@ function updateAllSeats() {
     const val = input.value.trim();
     if (!val) return;
 
-    let block = '';
-    if (val.includes('A') || val.includes('a') || val.includes('가')) block = 'A';
-    else if (val.includes('B') || val.includes('b') || val.includes('나')) block = 'B';
-    else if (val.includes('C') || val.includes('c') || val.includes('다')) block = 'C';
+    // 층 판별 (2층 또는 2F가 들어가면 2F, 그 외에는 기본 1F)
+    let floor = '1F';
+    if (val.includes('2층') || val.toUpperCase().includes('2F')) {
+      floor = '2F';
+    }
 
-    const str = val.replace(/\s+/g, '');
+    let block = '';
+    // '2F'의 F와 겹치지 않도록 구역 알파벳 판별
+    const cleanedForBlock = val.replace(/1F|2F|1층|2층/gi, '');
+    if (cleanedForBlock.includes('A') || cleanedForBlock.includes('a') || cleanedForBlock.includes('가')) block = 'A';
+    else if (cleanedForBlock.includes('B') || cleanedForBlock.includes('b') || cleanedForBlock.includes('나')) block = 'B';
+    else if (cleanedForBlock.includes('C') || cleanedForBlock.includes('c') || cleanedForBlock.includes('다')) block = 'C';
+
+    const str = cleanedForBlock.replace(/\s+/g, '');
     const rowMatch = str.match(/(\d+열)/);
     const numMatch = str.match(/(\d+)(?!.*열)/);
 
@@ -2317,14 +2373,14 @@ function updateAllSeats() {
       const row = rowMatch[0];
       const num = numMatch[0];
       
-      const key = block ? `${block}-${row}-${num}` : `${row}-${num}`;
+      const key = block ? `${floor}-${block}-${row}-${num}` : `${floor}-${row}-${num}`;
       seatCounts[key] = (seatCounts[key] || 0) + 1;
     }
   });
 
   document.querySelectorAll('.seat').forEach(seat => {
-    const keyWithBlock = `${seat.dataset.block}-${seat.dataset.row}-${seat.dataset.num}`;
-    const keyWithoutBlock = `${seat.dataset.row}-${seat.dataset.num}`;
+    const keyWithBlock = `${seat.dataset.floor}-${seat.dataset.block}-${seat.dataset.row}-${seat.dataset.num}`;
+    const keyWithoutBlock = `${seat.dataset.floor}-${seat.dataset.row}-${seat.dataset.num}`;
     
     const count = seatCounts[keyWithBlock] || seatCounts[keyWithoutBlock];
     if (count) {
